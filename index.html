@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time-Bloom</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <header class="toolbar" aria-label="Calendar Controls">
+      <h1 class="title">Time-Bloom</h1>
+      <div class="controls">
+        <button id="prevMonthBtn" class="btn" aria-label="Previous month">◀ Prev</button>
+        <label class="sr-only" for="monthSelect">Month</label>
+        <select id="monthSelect" class="select" aria-label="Month"></select>
+        <label class="sr-only" for="yearSelect">Year</label>
+        <select id="yearSelect" class="select" aria-label="Year"></select>
+        <button id="nextMonthBtn" class="btn" aria-label="Next month">Next ▶</button>
+        <button id="todayBtn" class="btn" aria-label="Jump to today">Today</button>
+        <div class="share-wrap">
+          <button id="shareEditableBtn" class="btn">Share</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="calendar-section">
+        <div class="month-line">
+          <div>
+            <div id="monthLabel" class="month-label"></div>
+            <p class="hint">Click a day to schedule from 7:00 AM to 10:00 PM.</p>
+          </div>
+          <div class="season-tag" id="seasonTag" aria-hidden="true"></div>
+        </div>
+
+        <div class="weekdays" role="row" aria-label="Weekday Headers">
+          <div class="weekday" role="columnheader">SUN</div>
+          <div class="weekday" role="columnheader">MON</div>
+          <div class="weekday" role="columnheader">TUE</div>
+          <div class="weekday" role="columnheader">WED</div>
+          <div class="weekday" role="columnheader">THU</div>
+          <div class="weekday" role="columnheader">FRI</div>
+          <div class="weekday" role="columnheader">SAT</div>
+        </div>
+
+        <div id="calendarGrid" class="grid calendar-surface" role="grid" aria-label="Calendar days"></div>
+      </section>
+
+      <aside class="day-section">
+        <div class="day-header">
+          <div>
+            <div class="day-title">Day Schedule</div>
+            <div id="selectedDateKey" class="date-key"></div>
+          </div>
+          <div class="toggle">
+            <button id="toCalendarBtn" class="btn small" aria-label="Show calendar">Calendar</button>
+            <button id="toDayBtn" class="btn small" aria-label="Show day view">Day</button>
+          </div>
+        </div>
+
+        <div class="day-nav">
+          <button id="prevDayBtn" class="btn small" aria-label="Previous day">◀</button>
+          <div id="prettyDate" class="pretty-date"></div>
+          <button id="nextDayBtn" class="btn small" aria-label="Next day">▶</button>
+        </div>
+
+        <div id="slotsContainer" class="slots"></div>
+
+        <div class="actions">
+          <span id="liveStatus" class="hint">Live: <span id="liveDot">•</span> <span id="liveMode">checking…</span></span>
+          <button id="saveBtn" class="btn">Save</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">Tip: Share the link so your team can edit together in real time.</footer>
+  </div>
+
+  <!-- UMD build so the calendar renders even if modules/CDN are blocked -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app-supabase.js?v=7"></script>
+</body>
+</html>
