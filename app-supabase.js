@@ -3,8 +3,8 @@
   const hasSupabaseLib = typeof window !== 'undefined' && window.supabase && window.supabase.createClient;
 
   // ======= CONFIG: fill these for live sync =======
-  const SUPABASE_URL = 'YOUR_SUPABASE_URL';        // e.g., https://xyz.supabase.co
-  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  const SUPABASE_URL = 'https://efokmnkbdsnukxbqnuii.supabase.co';        // e.g., https://xyz.supabase.co
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2ttbmtiZHNudWt4YnFudWlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MzY2NTQsImV4cCI6MjA3MjUxMjY1NH0.vHWVHgqcrJgwZ-lYSZ-Bcc0MCm6wRNUTugyMDZJG9Bc';
   // ================================================
 
   // Backend selector
